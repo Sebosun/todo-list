@@ -1,10 +1,12 @@
 import generateTodo from './generateList';
+import addCollectionOptions from './addCollectionOptions';
 
 const titleInput = document.getElementById("title")
 const descriptionInput = document.getElementById('description')
 const endDateInput = document.getElementById('enddate')
 const getItemForm = document.getElementById('add-item-form');
-const collectionsDiv = document.getElementById('collections');
+// const collectionsDiv = document.getElementById('collections');
+
 // const form = document.getElementById('form');
 
 
@@ -28,39 +30,47 @@ if (TodoStorage_deserialized != null){
 
 
 
-// asks you to which todoCollection add the given todo
-const addCollectionOptions = (storage) => {
-    // let buttonsDiv = document.createElement('div')
-    let labelDiv = document.createElement('label');
-    let selectDiv = document.createElement('select');
+// // asks you to which todoCollection add the given todo
+// const addCollectionOptions = (storage) => {
+//     // let buttonsDiv = document.createElement('div')
+//     let labelDiv = document.createElement('label');
+//     let selectDiv = document.createElement('select');
 
-    labelDiv.htmlFor = 'collection'
-    labelDiv.textContent = 'Choose your collection  '
-    
-    // Object.keys returns an array
-    Object.keys(storage).forEach(element => {
-        console.log(storage);
-        let option = document.createElement('option')
-        option.textContent = element;
-        option.value = element;
-        selectDiv.appendChild(option);
-    });
+//     selectDiv.id = 'collection-choice';
 
-    labelDiv.appendChild(selectDiv);
-    collectionsDiv.append(labelDiv);
+//     labelDiv.htmlFor = 'collection'
+//     labelDiv.textContent = 'Choose your collection  '
     
-}
+//     // Object.keys returns an array
+//     Object.keys(storage).forEach(element => {
+//         console.log(storage);
+//         let option = document.createElement('option')
+//         option.textContent = element;
+//         option.value = element;
+//         selectDiv.appendChild(option);
+//     });
+
+//     labelDiv.appendChild(selectDiv);
+//     collectionsDiv.append(labelDiv);
+    
+// }
+
+
 addCollectionOptions(TodoStorage);
 generateTodo(TodoStorage);
 console.log(Object.keys(TodoStorage));
+// console.log('Collections value: ', collectionsChoice.value)
 // When the getItemForm is submitted, new object is created then added to TodoStorage
 // TodoStorage then is conversted into serialized JSON, which is saved in localStorage
 getItemForm.addEventListener('submit', (e) => {
+    const collectionChoice = document.getElementById('collection-choice').value;
+
     let newItem = TodoFactory(titleInput.value, descriptionInput.value, document.querySelector('input[name="priority"]:checked').value, endDateInput.value)
-    if (TodoStorage['test1'] === undefined){
-        TodoStorage['test1'] = [];
+
+    if (TodoStorage[collectionChoice] === undefined){
+        TodoStorage[collectionChoice] = [];
     }
-    TodoStorage['test1'].push(newItem); 
+    TodoStorage[collectionChoice].push(newItem); 
     alert('alert test');
 
     let TodoStorage_serialized = JSON.stringify(TodoStorage);
