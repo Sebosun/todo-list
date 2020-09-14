@@ -28,34 +28,6 @@ if (TodoStorage_deserialized != null){
     TodoStorage = JSON.parse(localStorage.getItem("TodoStorage"));
 }
 
-
-
-// // asks you to which todoCollection add the given todo
-// const addCollectionOptions = (storage) => {
-//     // let buttonsDiv = document.createElement('div')
-//     let labelDiv = document.createElement('label');
-//     let selectDiv = document.createElement('select');
-
-//     selectDiv.id = 'collection-choice';
-
-//     labelDiv.htmlFor = 'collection'
-//     labelDiv.textContent = 'Choose your collection  '
-    
-//     // Object.keys returns an array
-//     Object.keys(storage).forEach(element => {
-//         console.log(storage);
-//         let option = document.createElement('option')
-//         option.textContent = element;
-//         option.value = element;
-//         selectDiv.appendChild(option);
-//     });
-
-//     labelDiv.appendChild(selectDiv);
-//     collectionsDiv.append(labelDiv);
-    
-// }
-
-
 addCollectionOptions(TodoStorage);
 generateTodo(TodoStorage);
 console.log(Object.keys(TodoStorage));
@@ -66,6 +38,8 @@ getItemForm.addEventListener('submit', (e) => {
     const collectionChoice = document.getElementById('collection-choice').value;
 
     let newItem = TodoFactory(titleInput.value, descriptionInput.value, document.querySelector('input[name="priority"]:checked').value, endDateInput.value)
+
+    // if a given collection does not exist, add empty array
 
     if (TodoStorage[collectionChoice] === undefined){
         TodoStorage[collectionChoice] = [];
