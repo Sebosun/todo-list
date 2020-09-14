@@ -1,20 +1,23 @@
-
-
-// what do i need? 
-// bede zbierał jakas funkcja dane danego ToDo
-const renderTodoList = (listData, ) => {
-    for (let index = 0; index < 10; index++) {
-        let todoList = document.createElement('div');
-        todoList.className = 'content';
-        todoList.textContent = 'Todolist title'
-        for (let dataInt = 0; dataInt < 5; dataInt++) {
-            let dataDiv = document.createElement('div');
-            dataDiv.className = `data`;
-            dataDiv.textContent = `${dataInt}. jakies tam dane`
-            todoList.appendChild(dataDiv);
+const generateTodo = (storage) => {
+    const contentSelector = document.querySelector('#grid-container');
+    for (const property in storage) {
+        let todoDiv = document.createElement('div');
+        todoDiv.className = 'content';
+        // storage[property] will return object in storage, first test then test2 etc
+        console.log(storage[property].length);
+        for (let i = 0; i < storage[property].length; i++) {
+            // Gives the entire collection the name of the object/property
+            todoDiv.textContent = `${property}`
+            for (let dataInt = 0; dataInt < 3; dataInt++) {
+                let dataDiv = document.createElement('div');
+                dataDiv.className = `data`;
+                let description = storage[property][dataInt].title
+                dataDiv.textContent = `${dataInt}. ${description}`
+                todoDiv.appendChild(dataDiv);
+            }
         }
+        contentSelector.appendChild(todoDiv);
     }
-    contentSelector.appendChild(todoList);
 }
 
-// export default renderTodoList;
+export default generateTodo;

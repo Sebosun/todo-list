@@ -1,6 +1,8 @@
-const contentSelector = document.querySelector('#grid-container');
-let TodoStorage = {
+import generateTodo from './generateList';
 
+const contentSelector = document.querySelector('#grid-container');
+
+let TodoStorage = {
 }; 
 
 const TodoFactory = (title, description, prority, dueDate) => {
@@ -22,35 +24,5 @@ TodoStorage['test2'] = [];
 
 TodoStorage['test2'].push(fourth, fifth, sixth);
 
-console.log(TodoStorage);
+generateTodo(TodoStorage);
 
-// Czyli, storowac obiekty w obiekcie, potem sie to bedzie renderowac za pomoca generateList.js
-// lista[sranie.title] = sranie;
-// lista[sranie.title]['gowno'] = TodoFactory('a', 'b', 'c', 'd');
-
-
-for (const property in TodoStorage) {
-    let todoDiv = document.createElement('div');
-    todoDiv.className = 'content';
-    // TodoStorage[property] will return object in TodoStorage, first test then test2 etc
-    console.log(TodoStorage[property].length);
-    for (let i = 0; i < TodoStorage[property].length; i++) {
-
-
-        // Gives the entire collection the name of the object/property
-
-        todoDiv.textContent = `${property}`
-        for (let dataInt = 0; dataInt < 3; dataInt++) {
-            let dataDiv = document.createElement('div');
-            dataDiv.className = `data`;
-
-            let description = TodoStorage[property][dataInt].title
-
-            dataDiv.textContent = `${dataInt}. ${description}`
-            todoDiv.appendChild(dataDiv);
-        }
-        
-
-    }
-    contentSelector.appendChild(todoDiv);
-}
