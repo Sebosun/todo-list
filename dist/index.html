@@ -7,6 +7,34 @@
 <body>
     <!-- <div class="content"></div> -->
     <div id="grid-container"></div>
+    <div id="survey">
+      <form action="#">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"></br>
+        <label for="priority">Priority</label></br>
+        <div class='radio-buttons'>
+          <label class='radio' for='high'>
+              <input type="radio" id='high' name='priority' value='high'required>
+              High
+          </label>
+          <label class='radio' for='medium'>
+              <input type="radio" id='medium' name='priority' value='medium'required>
+              Medium
+          </label>
+          <lable class='radio' for='low'>
+            <input type="radio" id='low' name='priority' value='low' required>
+            Low
+          </lable>
+      </div>
+        <label for="date">End date:</label><br>
+        <input type="date" id="enddate" name="date">
+       
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   	<script src="main.js"></script>
 </body>
 </html> 
