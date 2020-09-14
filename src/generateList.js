@@ -8,7 +8,8 @@ const generateTodo = (storage) => {
         for (let i = 0; i < storage[property].length; i++) {
             // Gives the entire collection the name of the object/property
             todoDiv.textContent = `${property}`
-            for (let dataInt = 0; dataInt < 3; dataInt++) {
+            console.log(i);
+            for (let dataInt = 0; dataInt < storage[property].length; dataInt++) {
                 let dataDiv = document.createElement('div');
                 dataDiv.className = `data`;
                 let description = storage[property][dataInt].title
