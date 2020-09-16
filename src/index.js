@@ -5,12 +5,6 @@ const titleInput = document.getElementById("title")
 const descriptionInput = document.getElementById('description')
 const endDateInput = document.getElementById('enddate')
 const getItemForm = document.getElementById('add-item-form');
-// const collectionsDiv = document.getElementById('collections');
-
-// const form = document.getElementById('form');
-
-
-//const contentSelector = document.querySelector('#grid-container');
 
 let TodoStorage = {
 }; 
@@ -31,7 +25,7 @@ if (TodoStorage_deserialized != null){
 addCollectionOptions(TodoStorage);
 generateTodo(TodoStorage);
 console.log(Object.keys(TodoStorage));
-// console.log('Collections value: ', collectionsChoice.value)
+
 // When the getItemForm is submitted, new object is created then added to TodoStorage
 // TodoStorage then is conversted into serialized JSON, which is saved in localStorage
 getItemForm.addEventListener('submit', (e) => {
