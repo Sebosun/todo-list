@@ -30,6 +30,19 @@ body{
     border: 1px solid bisque;
 }
 
+
+form{
+    text-align: center;
+    margin:auto;
+    width: 300px;
+    /* background-color: bisque; */
+}
+
+#add-collection-form{
+    /* temp fix anyway, final will have absolute position and just pop up on the screen */
+    padding-top: 50px;
+}
+
 .content > div{
     /* color: rgb(0, 0, 0); */
 }
