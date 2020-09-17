@@ -15,8 +15,8 @@ let TodoStorage = {
 }; 
 
 // basic ToDo Factory, creates one single ToDo object
-const TodoFactory = (title, description, prority, dueDate) => {
-    return {title, description, prority, dueDate};
+const TodoFactory = (title, description, priority, dueDate) => {
+    return {title, description, priority, dueDate};
 };
 
 // Checks if ToDoStorage deserialized is empty. If it's not, 
