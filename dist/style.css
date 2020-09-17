@@ -1,5 +1,6 @@
 body{
-    background-color: rgba(80, 76, 76, 0.267);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(47,121,142,1) 42%, rgba(48,140,95,1) 71%); 
 }
 
 #grid-container{
@@ -17,8 +18,8 @@ body{
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 0.5em;
-    color: white;
-    background-color: rgb(97, 80, 97);
+    color: rgb(36, 10, 10);
+    background-color:rgba(139, 127, 127, 0.432);
     border: 2px solid black;
     justify-content: center;
 }
@@ -26,7 +27,7 @@ body{
 .content{
     justify-content: center;
     text-align: center;
-    background-color:rgb(255, 255, 255);
+    background-color:rgba(167, 162, 162, 0.671);
     border: 1px solid bisque;
 }
 
@@ -40,7 +41,12 @@ form{
 
 #add-collection-form{
     /* temp fix anyway, final will have absolute position and just pop up on the screen */
-    padding-top: 50px;
+    border: 2px solid gray;
+    margin: auto; margin-top: 1rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 5px 5px red;
 }
 
 .content > div{

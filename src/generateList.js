@@ -1,10 +1,15 @@
 const generateTodo = (storage) => {
+
     const contentSelector = document.querySelector('#grid-container');
+
     for (const property in storage) {
+
         let todoDiv = document.createElement('div');
         todoDiv.className = 'content';
+
         // storage[property] will return object in storage, first test then test2 etc
         console.log(storage[property].length);
+        
         for (let i = 0; i < storage[property].length; i++) {
             // Gives the entire collection the name of the object/property
             todoDiv.textContent = `${property}`
