@@ -1,9 +1,6 @@
 const generateTodo = (storage) => {
-
     const contentSelector = document.querySelector('#grid-container');
-
     for (const property in storage) {
-
         let todoDiv = document.createElement('div');
         todoDiv.className = 'content';
 
@@ -36,14 +33,47 @@ const generateTodo = (storage) => {
                 doneButton.textContent = "Done";
                 doneButton.className = 'done';
 
+
+                // checks if it's done, then saves storage to localStorage and rerenders the screen
+                doneButton.addEventListener('click', (e) => {
+                    if (storage[property][dataInt].done === "not-done"){
+                        storage[property][dataInt].done = "done";
+                    }
+                    else{
+                        storage[property][dataInt].done = "not-done";
+                    }
+                    
+                    console.log(storage[property][dataInt])
+                    let TodoStorage_serialized = JSON.stringify(storage);
+                    localStorage.setItem("TodoStorage", TodoStorage_serialized);
+
+                    reRender(storage);
+                });
+
                 let deleteButton = document.createElement('div');
                 deleteButton.textContent = 'Delete';
                 deleteButton.className = 'delete';
 
+
+                // eventListener for delete button. When clicked, it uses splice to remove 1 element
+                // from the position of dataInt. Then it saves storage to local storage and rerenders
+                deleteButton.addEventListener('click', (e) => {
+                    console.log(storage[property].splice(dataInt, 1));
+                    let TodoStorage_serialized = JSON.stringify(storage);
+                    localStorage.setItem("TodoStorage", TodoStorage_serialized);
+                    reRender(storage);
+                });
+
+
+                //if given task is "done" the rendered item will be "striked-through"
+                if (storage[property][dataInt].done === "done"){
+                    dataContainerDiv.style.textDecoration = 'line-through';
+                }
+
                 titleDiv.textContent = `${dataInt+1}. ${description}:`
                 descriptionDiv.textContent = `${storage[property][dataInt].description}`
                 priorityDiv.textContent = `${storage[property][dataInt].priority} priority`
-                dateDiv.textContent = `${storage[property][dataInt].dueDate}`                
+                dateDiv.textContent = `${storage[property][dataInt].dueDate}`              
                 
                 dataContainerDiv.appendChild(titleDiv);
                 dataContainerDiv.appendChild(descriptionDiv);
@@ -54,8 +84,17 @@ const generateTodo = (storage) => {
                 todoDiv.appendChild(dataContainerDiv);
             }
         }
+
         contentSelector.appendChild(todoDiv);
     }
+}
+
+//rerenders grid, first empties html then renders it again
+const reRender = (storage) => {
+    const contentSelector = document.querySelector('#grid-container');
+    contentSelector.innerHTML = "";
+    generateTodo(storage);
+
 }
 
 export default generateTodo;
