@@ -22,20 +22,26 @@ const generateTodo = (storage) => {
                 dataContainerDiv.className = `data`;
 
                 let titleDiv = document.createElement('div');
+                titleDiv.className = "title";
                 let priorityDiv = document.createElement('div');
+                priorityDiv.className = 'priority';
                 let descriptionDiv = document.createElement('div');
+                descriptionDiv.className = 'description';
+                let dateDiv = document.createElement('div');
+                dateDiv.className = 'date';
 
                 let description = storage[property][dataInt].title
                 
 
-                titleDiv.textContent = `${dataInt+1}. ${description}`
-                descriptionDiv.textContent = ` : ${storage[property][dataInt].description}`
-                priorityDiv.textContent = `Priority: ${storage[property][dataInt].priority}`
-                
+                titleDiv.textContent = `${dataInt+1}. ${description}:`
+                descriptionDiv.textContent = `${storage[property][dataInt].description}`
+                priorityDiv.textContent = `${storage[property][dataInt].priority} priority`
+                dateDiv.textContent = `${storage[property][dataInt].dueDate}`                
                 
                 dataContainerDiv.appendChild(titleDiv);
                 dataContainerDiv.appendChild(descriptionDiv);
                 dataContainerDiv.appendChild(priorityDiv);
+                dataContainerDiv.appendChild(dateDiv);
 
                 todoDiv.appendChild(dataContainerDiv);
             }

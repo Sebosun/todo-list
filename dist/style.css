@@ -19,21 +19,41 @@ body{
     text-align: center;
     color: white;
     background-color:rgba(167, 162, 162, 0.671);
-    border: 1px solid bisque;
+    border: 1px solid rgb(255, 140, 0);
 }
 
 .data{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 5px;
+    background-color: rgb(53, 52, 52);
     text-align: left;
     color: white;
-    background-color:rgba(139, 127, 127, 0.432);
     border: 0.5px solid black;
-    line-height: 2;
+    /* line-height: 2; */
     margin: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+}   
 
+.title{
+    grid-column: 1 / 2;
+    grid-row: 1;
 }
 
+.priority{
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.date{
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.description{
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
 
 
 
@@ -57,3 +77,4 @@ form{
 .content > div{
     /* color: rgb(0, 0, 0); */
 }
+
