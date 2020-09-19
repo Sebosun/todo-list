@@ -32,6 +32,13 @@ const generateTodo = (storage) => {
 
                 let description = storage[property][dataInt].title
                 
+                let doneButton = document.createElement('div');
+                doneButton.textContent = "Done";
+                doneButton.className = 'done';
+
+                let deleteButton = document.createElement('div');
+                deleteButton.textContent = 'Delete';
+                deleteButton.className = 'delete';
 
                 titleDiv.textContent = `${dataInt+1}. ${description}:`
                 descriptionDiv.textContent = `${storage[property][dataInt].description}`
@@ -42,7 +49,8 @@ const generateTodo = (storage) => {
                 dataContainerDiv.appendChild(descriptionDiv);
                 dataContainerDiv.appendChild(priorityDiv);
                 dataContainerDiv.appendChild(dateDiv);
-
+                dataContainerDiv.appendChild(doneButton);
+                dataContainerDiv.appendChild(deleteButton);
                 todoDiv.appendChild(dataContainerDiv);
             }
         }
