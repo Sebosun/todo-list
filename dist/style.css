@@ -94,6 +94,7 @@ body{
 .description{
     grid-column: 1 / 4;
     grid-row: 3 / 4;
+    border-top: 1px solid gray;
 }
 
 
