@@ -12,7 +12,7 @@
         <div id='exit-form' class='exit'>+</div>
         <form action="#">
           <label for="fname">Title</label><br>
-          <input type="text" id="title" name="title"><br>
+          <input type="text" id="title" name="title" required><br>
           <label for="lname">Description</label><br>
           <input type="text" id="description" name="description"></br>
           <label for="priority">Priority</label></br>
@@ -26,7 +26,7 @@
                 Medium
             </label>
             <lable class='radio' for='low'>
-              <input type="radio" id='low' name='priority' value='Low' required>
+              <input type="radio" id='low' name='priority' value='Low' required checked>
               Low
             </lable>
         </div>
@@ -42,7 +42,7 @@
         <div id='exit-collection' class='exit'>+</div>
         <form>
           <label for='Collection Name'>Enter New Collection Name</label><br>
-          <input type="text" id='collection-name' name='collection-name'><br>
+          <input type="text" id='collection-name' name='collection-name' required><br>
           <input type="submit" value="Submit">
         </form>
       </div>

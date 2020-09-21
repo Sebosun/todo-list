@@ -9,8 +9,12 @@ const generateTodo = (storage) => {
 
         // storage[property] will return object in storage, first test then test2 etc
         console.log(storage[property].length);
-        // todoDiv.textContent = `${property}`
+
+        todoDiv.textContent = `${property}`
+
         for (let i = 0; i < storage[property].length; i++) {
+            // doing it again, since for some reason if I want the name to be initiated at the beggining
+            // not doing it again here breaks the addition
             todoDiv.textContent = `${property}`
             //the plan is to make a grid, which will be divided into couple of parts, each 
             //having different information / one reserved for buttons i guess
