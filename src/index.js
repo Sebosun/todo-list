@@ -1,6 +1,6 @@
 import generateTodo from './generateList';
 import addCollectionOptions from './addCollectionOptions';
-
+import {showForm, showCollection} from './showHideElements'
 
 // from variables
 const titleInput = document.getElementById("title")
@@ -23,6 +23,7 @@ const TodoFactory = (title, description, priority, dueDate) => {
 // replaces the content of ToDoStorage with user's previous data
 let TodoStorage_deserialized = JSON.parse(localStorage.getItem("TodoStorage"));
 
+
 if (TodoStorage_deserialized != null){
     TodoStorage = JSON.parse(localStorage.getItem("TodoStorage"));
 }
@@ -31,7 +32,8 @@ console.log(Object.keys(TodoStorage));
 console.log(localStorage)
 addCollectionOptions(TodoStorage);
 generateTodo(TodoStorage);
-
+showCollection();
+showForm();
 
 // When the getItemForm is submitted, new object is created then added to TodoStorage
 // TodoStorage then is conversted into serialized JSON, which is saved in localStorage

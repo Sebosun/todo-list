@@ -7,40 +7,48 @@
 <body>
     <!-- <div class="content"></div> -->
     <div id="grid-container"></div>
-    <div id="add-item-form">
-      <form action="#">
-        <label for="fname">Title</label><br>
-        <input type="text" id="title" name="title"><br>
-        <label for="lname">Description</label><br>
-        <input type="text" id="description" name="description"></br>
-        <label for="priority">Priority</label></br>
-        <div class='radio-buttons'>
-          <label class='radio' for='high'>
-              <input type="radio" id='high' name='priority' value='High'required>
-              High
-          </label>
-          <label class='radio' for='medium'>
-              <input type="radio" id='medium' name='priority' value='Medium'required>
-              Medium
-          </label>
-          <lable class='radio' for='low'>
-            <input type="radio" id='low' name='priority' value='Low' required>
-            Low
-          </lable>
+    <div class="bg-modal">
+      <div id="add-item-form">
+        <form action="#">
+          <label for="fname">Title</label><br>
+          <input type="text" id="title" name="title"><br>
+          <label for="lname">Description</label><br>
+          <input type="text" id="description" name="description"></br>
+          <label for="priority">Priority</label></br>
+          <div class='radio-buttons'>
+            <label class='radio' for='high'>
+                <input type="radio" id='high' name='priority' value='High'required>
+                High
+            </label>
+            <label class='radio' for='medium'>
+                <input type="radio" id='medium' name='priority' value='Medium'required>
+                Medium
+            </label>
+            <lable class='radio' for='low'>
+              <input type="radio" id='low' name='priority' value='Low' required>
+              Low
+            </lable>
+        </div>
+          <label for="date">End date:</label><br>
+          <input type="date" id="enddate" name="date">
+          <div id='collections'></div>
+          <input type="submit" value="Submit">
+        </form>
       </div>
-        <label for="date">End date:</label><br>
-        <input type="date" id="enddate" name="date">
-        <div id='collections'></div>
-        <input type="submit" value="Submit">
-      </form>
     </div>
-    <div id="add-collection-form">
-      <form>
-        <label for='Collection Name'>Enter New Collection Name</label><br>
-        <input type="text" id='collection-name' name='collection-name'> 
-        <input type="submit" value="Submit">
-      </form>
+    <div class="bg-modal">
+      <div id="add-collection-form">
+        <form>
+          <label for='Collection Name'>Enter New Collection Name</label><br>
+          <input type="text" id='collection-name' name='collection-name'><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
+    <div id="collection-button" class='button'>Add Collection</div>
+    <div id="task-button" class='button'>Add a task</div>
+    
+
   	<script src="main.js"></script>
 </body>
 </html> 
