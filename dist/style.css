@@ -140,8 +140,24 @@ input{
     align-items: center;
     text-align: center;
     border-radius: 4px;
+    position: relative;
     margin: 15px auto;
 }  
+
+#add-item-form{
+    height: 300px;
+	width: 500px;
+	background-color: white;
+    display: flex;
+    /* padding: 20px; */
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+    margin: 15px auto;
+}
+
 
 
 .button {
@@ -155,6 +171,20 @@ input{
 	display: inline-block;
 }
 
+.button:hover{
+    background-color: white;
+    color: rgb(32, 32, 146);
+    cursor: pointer;
+}
+
+.exit{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
 
 
 
