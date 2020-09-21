@@ -33,9 +33,7 @@ console.log(localStorage)
 addCollectionOptions(TodoStorage);
 generateTodo(TodoStorage);
 
-showCollection();
-showForm();
-hideForm();
+showCollection(); showForm();
 
 // When the getItemForm is submitted, new object is created then added to TodoStorage
 // TodoStorage then is conversted into serialized JSON, which is saved in localStorage
